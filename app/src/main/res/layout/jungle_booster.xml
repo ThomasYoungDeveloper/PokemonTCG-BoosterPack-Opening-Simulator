@@ -43,12 +43,13 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="387dp"
-        android:layout_height="600dp"
+        android:layout_height="653dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -72,13 +73,6 @@
             android:layout_marginLeft="16dp"
             android:text="Get another pack" />
 
-        <Button
-            android:id="@+id/changeSetBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginLeft="16dp"
-            android:text="!" />
 
     </LinearLayout>
 

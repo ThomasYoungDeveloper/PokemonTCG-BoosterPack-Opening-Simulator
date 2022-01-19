@@ -35,30 +35,94 @@ class MainActivity : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.title = "Pokemon Booster Pack Simulator"
 
-        val cardValue: TextView = findViewById(R.id.tvCardValue)
         val getCardBtn: Button = findViewById(R.id.getCardBtn)
         val viewCollectedCards: Button = findViewById(R.id.viewCollectedCards)
         val pokemonCard: ImageView = findViewById(R.id.PokemonCard)
         val cardsLeft: TextView = findViewById(R.id.tvCardsLeft)
+        val changeSetBtn: Button = findViewById(R.id.changeSetBtn)
         var cardCount = 10
-        var value = 0
         val pokemonCardsCollected = mutableListOf<String>()
+        var numCardsInSet: Int = 101
+        val cardsSet: String = "rocket"
+        //= mutableListOf<String>("base", "jungle", "promos", "fossil", "base2", "rocket")
 
 
         Glide.with(this).load("https://images.pokemontcg.io/pl10/1_hires.png").into(pokemonCard)
 
-        getCardBtn.setOnClickListener{
-             cardsLeft.text = "Cards Left: ${cardCount.toString()}"
-            cardValue.text = "Value: ${value.toString()}"
-            if (cardCount > 0){
-                val randomPokemonCard = (1..101 + 1).random()
-                Glide.with(this).load("https://images.pokemontcg.io/base1/${randomPokemonCard.toString()}_hires.png").into(pokemonCard)
-                pokemonCardsCollected.add("https://images.pokemontcg.io/base1/${randomPokemonCard.toString()}_hires.png")
+
+
+        fun getCard(set: String){
+
+            if (set == "base"){
+                if (cardCount > 0){
+                    val randomPokemonCard = (1..numCardsInSet + 1).random()
+                    Glide.with(this).load("https://images.pokemontcg.io/base1/${randomPokemonCard.toString()}_hires.png").into(pokemonCard)
+                    pokemonCardsCollected.add("https://images.pokemontcg.io/base1/${randomPokemonCard.toString()}_hires.png")
+                    cardCount--
+                }
+            } else if (set == "jungle"){
+                numCardsInSet = 64
+                if (cardCount > 0) {
+                    val randomPokemonCard = (1..numCardsInSet + 1).random()
+                    com.bumptech.glide.Glide.with(this)
+                        .load("https://images.pokemontcg.io/base2/${randomPokemonCard.toString()}_hires.png")
+                        .into(pokemonCard)
+                    //pokemonCardsCollected.add("https://images.pokemontcg.io/base1/${randomPokemonCard.toString()}_hires.png")
+                    cardCount--
+                }
+            } else if (set == "promos"){
+                numCardsInSet = 53
+                if (cardCount > 0) {
+                    val randomPokemonCard = (1..numCardsInSet + 1).random()
+                    com.bumptech.glide.Glide.with(this)
+                        .load("https://images.pokemontcg.io/basep/${randomPokemonCard.toString()}_hires.png")
+                        .into(pokemonCard)
+                    cardCount--
+                }
+            } else if (set == "fossil") {
+                numCardsInSet = 62
+                if (cardCount > 0) {
+                    val randomPokemonCard = (1..numCardsInSet + 1).random()
+                    com.bumptech.glide.Glide.with(this)
+                        .load("https://images.pokemontcg.io/base3/${randomPokemonCard.toString()}_hires.png")
+                        .into(pokemonCard)
+                    cardCount--
+                }
+            } else if (set == "base2") {
+                numCardsInSet = 62
+                if (cardCount > 0) {
+                    val randomPokemonCard = (1..numCardsInSet + 1).random()
+                    com.bumptech.glide.Glide.with(this)
+                        .load("https://images.pokemontcg.io/base4/${randomPokemonCard.toString()}_hires.png")
+                        .into(pokemonCard)
+                    cardCount--
+                }
+            } else if (set == "rocket"){
+                numCardsInSet = 82
+                if (cardCount > 0) {
+                val randomPokemonCard = (1..numCardsInSet + 1).random()
+                com.bumptech.glide.Glide.with(this).load("https://images.pokemontcg.io/base5/${randomPokemonCard.toString()}_hires.png").into(pokemonCard)
                 cardCount--
-            } else {
+                }
+            } else if (cardCount < 0) {
                 Toast.makeText(this, "No More Cards", Toast.LENGTH_SHORT).show()
             }
         }
+
+
+
+        getCardBtn.setOnClickListener{
+             cardsLeft.text = "Cards Left: ${cardCount.toString()}"
+            getCard("$cardsSet")
+    }
+
+        changeSetBtn.setOnClickListener{
+            cardCount = 10
+            cardsSet == "base"
+            tvCardsLeft.text = "Cards Left: ${(cardCount + 1).toString()}"
+
+        }
+
 
         viewCollectedCards.setOnClickListener{
 
@@ -69,22 +133,8 @@ class MainActivity : AppCompatActivity() {
             } else {
                 recyclerView.visibility = View.GONE
             }
-
-            /*
-            val intent = Intent(this, PokemonCardCollection:: class.java).also {
-            intent.putExtra("EXTRA_ARRAY", pokemonCardsCollected.toString() )
-            }
-            startActivity(intent)
-*/
         }
-
-
-
     }
-
-
-
-
 }
 
 
