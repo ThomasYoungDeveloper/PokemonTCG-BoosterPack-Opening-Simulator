@@ -6,18 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="15dp"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/tvCardsLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cards left: 11"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
+    tools:context=".BoosterPacksActivity">
 
 
     <LinearLayout
@@ -26,18 +15,35 @@
         android:layout_height="578dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:gravity="center"
         android:orientation="vertical"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCardsLeft"
-        android:visibility="visible">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/PokemonCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/back_of_card"
-            android:layout_gravity="center"/>
+            android:id="@+id/basePack"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/pokemon_base1"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"/>
+
+        <ImageView
+            android:id="@+id/junglePack"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/pokemon_jungle"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"/>
+
+        <ImageView
+            android:id="@+id/promosPack"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/pokemon_promo"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"/>
+
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
