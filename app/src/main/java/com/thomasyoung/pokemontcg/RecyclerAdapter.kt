@@ -11,8 +11,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 
-class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
-
+class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
 
     private var titles = listOf(
@@ -21,7 +20,6 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
         "Promos",
         "Fossil",
         "Base set 2",
-//      "Team Rocket",
         "Gym Heroes",
         "Gym Challenge",
         "Neo Genesis",
@@ -41,7 +39,6 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
         "Released: 07/01/1999",
         "Released: 10/10/1999",
         "Released: 02/24/2000",
-//        "Released: 08/14/2000",
         "Released: 10/26/2000",
         "Released: 02/24/2000",
         "Released: 02/24/2000",
@@ -60,7 +57,6 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
         R.drawable.pokemon_promo,
         R.drawable.pokemon_fossil,
         R.drawable.base_2,
-//        R.drawable.rocket,
         R.drawable.gym1,
         R.drawable.gym2,
         R.drawable.neo,
@@ -72,8 +68,10 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
         R.drawable.ecard1,
         R.drawable.ecard2
     )
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapter.ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.pokemon_collection, parent, false)
+        val v =
+            LayoutInflater.from(parent.context).inflate(R.layout.pokemon_collection, parent, false)
         return ViewHolder(v)
     }
 
@@ -87,98 +85,93 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
         return images.size
     }
 
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var itemImage: ImageView = itemView.findViewById(R.id.itemImage)
         var itemTitle: TextView = itemView.findViewById(R.id.itemTitle)
         var itemDetail: TextView = itemView.findViewById(R.id.itemDetail)
 
 
         init {
-            itemView.setOnClickListener{
+            itemView.setOnClickListener {
                 when (absoluteAdapterPosition) {
                     0 -> {
-                        val intent = Intent(itemView.context, MainActivity:: class.java)
+                        val intent = Intent(itemView.context, MainActivity::class.java)
                         intent.putExtra("cardSet", "base1")
                         itemView.context.startActivity(intent)
                     }
                     1 -> {
-                        val intent = Intent(itemView.context, MainActivity:: class.java)
+                        val intent = Intent(itemView.context, MainActivity::class.java)
                         intent.putExtra("cardSet", "base2")
                         itemView.context.startActivity(intent)
                     }
                     2 -> {
-                        val intent = Intent(itemView.context, MainActivity:: class.java)
+                        val intent = Intent(itemView.context, MainActivity::class.java)
                         intent.putExtra("cardSet", "basep")
                         itemView.context.startActivity(intent)
                     }
                     3 -> {
-                        val intent = Intent(itemView.context, MainActivity:: class.java)
+                        val intent = Intent(itemView.context, MainActivity::class.java)
                         intent.putExtra("cardSet", "base3")
                         itemView.context.startActivity(intent)
                     }
                     4 -> {
-                        val intent = Intent(itemView.context, MainActivity:: class.java)
+                        val intent = Intent(itemView.context, MainActivity::class.java)
                         intent.putExtra("cardSet", "base4")
                         itemView.context.startActivity(intent)
                     }
-//                    5 -> {
-//                        val intent = Intent(itemView.context, MainActivity:: class.java)
-//                        intent.putExtra("cardSet", "base5")
-//                        itemView.context.startActivity(intent)
-//                    }
                     5 -> {
-                        val intent = Intent(itemView.context, MainActivity:: class.java)
+                        val intent = Intent(itemView.context, MainActivity::class.java)
                         intent.putExtra("cardSet", "gym1")
                         itemView.context.startActivity(intent)
                     }
                     6 -> {
-                        val intent = Intent(itemView.context, MainActivity:: class.java)
+                        val intent = Intent(itemView.context, MainActivity::class.java)
                         intent.putExtra("cardSet", "gym2")
                         itemView.context.startActivity(intent)
                     }
                     7 -> {
-                        val intent = Intent(itemView.context, MainActivity:: class.java)
+                        val intent = Intent(itemView.context, MainActivity::class.java)
                         intent.putExtra("cardSet", "neo1")
                         itemView.context.startActivity(intent)
                     }
                     8 -> {
-                        val intent = Intent(itemView.context, MainActivity:: class.java)
+                        val intent = Intent(itemView.context, MainActivity::class.java)
                         intent.putExtra("cardSet", "neo2")
                         itemView.context.startActivity(intent)
                     }
                     9 -> {
-                        val intent = Intent(itemView.context, MainActivity:: class.java)
+                        val intent = Intent(itemView.context, MainActivity::class.java)
                         intent.putExtra("cardSet", "si1")
                         itemView.context.startActivity(intent)
                     }
                     10 -> {
-                        val intent = Intent(itemView.context, MainActivity:: class.java)
+                        val intent = Intent(itemView.context, MainActivity::class.java)
                         intent.putExtra("cardSet", "neo3")
                         itemView.context.startActivity(intent)
                     }
                     11 -> {
-                        val intent = Intent(itemView.context, MainActivity:: class.java)
+                        val intent = Intent(itemView.context, MainActivity::class.java)
                         intent.putExtra("cardSet", "neo4")
                         itemView.context.startActivity(intent)
                     }
                     12 -> {
-                        val intent = Intent(itemView.context, MainActivity:: class.java)
+                        val intent = Intent(itemView.context, MainActivity::class.java)
                         intent.putExtra("cardSet", "base6")
                         itemView.context.startActivity(intent)
                     }
                     13 -> {
-                        val intent = Intent(itemView.context, MainActivity:: class.java)
+                        val intent = Intent(itemView.context, MainActivity::class.java)
                         intent.putExtra("cardSet", "ecard1")
                         itemView.context.startActivity(intent)
                     }
                     14 -> {
-                        val intent = Intent(itemView.context, MainActivity:: class.java)
+                        val intent = Intent(itemView.context, MainActivity::class.java)
                         intent.putExtra("cardSet", "ecard2")
                         itemView.context.startActivity(intent)
                     }
 
-                       else -> {
-                        val intent = Intent(itemView.context, MainActivity:: class.java)
+                    else -> {
+                        val intent = Intent(itemView.context, MainActivity::class.java)
                         intent.putExtra("cardSet", "ecard2")
                         itemView.context.startActivity(intent)
                     }
