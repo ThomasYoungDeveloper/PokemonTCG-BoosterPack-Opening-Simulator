@@ -31,13 +31,13 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
 
         val getCardBtn: Button = findViewById(R.id.getCardBtn)
-        val viewOtherPacksButton: Button = findViewById(R.id.viewOtherPacksBtn)
+        //val viewCollections: Button = findViewById(R.id.viewCollectedCards)
         val pokemonCard: ImageView = findViewById(R.id.PokemonCard)
         val cardsLeft: TextView = findViewById(R.id.tvCardsLeft)
         var cardCount = 11
         val pokemonCardsCollected = mutableListOf<String>()
         var numCardsInSet: Int
-        var cardSet: String
+        val cardSet: String
         val cardSetChosen = intent.getStringExtra("cardSet")
         cardSet = cardSetChosen.toString()
 
@@ -55,7 +55,6 @@ class MainActivity : AppCompatActivity() {
                             .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
                             .placeholder(R.drawable.loading_spinner)
                             .into(pokemonCard)
-                        //pokemonCardsCollected.add("https://images.pokemontcg.io/$set/${randomPokemonCard.toString()}_hires.png")
                         cardCount--
                     }
                 }
@@ -314,6 +313,17 @@ class MainActivity : AppCompatActivity() {
                         cardCount--
                     }
                 }
+                "swsh45" -> {
+                    numCardsInSet = 72
+                    if (cardCount > 0) {
+                        val randomPokemonCard = (1..numCardsInSet + 1).random()
+                        Glide.with(this)
+                            .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
+                            .into(pokemonCard)
+                        cardCount--
+                    }
+                }
                 else -> {
                     Toast.makeText(this, "No More Cards", Toast.LENGTH_SHORT).show()
                 }
@@ -334,6 +344,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+
 }
 
 

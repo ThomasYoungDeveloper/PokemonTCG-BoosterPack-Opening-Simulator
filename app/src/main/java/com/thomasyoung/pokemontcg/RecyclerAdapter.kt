@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 
@@ -37,7 +36,8 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         "Nintendo Promos",
         "Magma vs Aqua",
         "Hidden Legends",
-        "FireRed vs LeafGreen"
+        "FireRed vs LeafGreen",
+        "Shining Fates"
 
 
     )
@@ -67,6 +67,7 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         "Released: ",
         "Released: ",
         "Released: ",
+        "Released: "
     )
     private var images = listOf(
         R.drawable.pokemon_base1,
@@ -91,13 +92,14 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         R.drawable.pokemon_promo,
         R.drawable.ex4,
         R.drawable.ex5,
-        R.drawable.ex6
+        R.drawable.ex6,
+        R.drawable.swsh45
 
     )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapter.ViewHolder {
         val v =
-            LayoutInflater.from(parent.context).inflate(R.layout.pokemon_collection, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.booster_packs, parent, false)
         return ViewHolder(v)
     }
 
@@ -233,6 +235,11 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                     22 -> {
                         val intent = Intent(itemView.context, MainActivity::class.java)
                         intent.putExtra("cardSet", "ex6")
+                        itemView.context.startActivity(intent)
+                    }
+                    23 -> {
+                        val intent = Intent(itemView.context, MainActivity::class.java)
+                        intent.putExtra("cardSet", "swsh45")
                         itemView.context.startActivity(intent)
                     }
 
