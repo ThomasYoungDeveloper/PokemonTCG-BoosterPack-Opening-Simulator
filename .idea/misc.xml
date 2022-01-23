@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/loading_spinner.xml" value="0.35462962962962963" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2151268115942029" />
         <entry key="app/src/main/res/layout/booster_packs.xml" value="0.1" />
         <entry key="app/src/main/res/layout/jungle_booster.xml" value="0.3428442028985507" />
+        <entry key="app/src/main/res/layout/loading_spinner.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/pokemon_collection.xml" value="0.1" />
       </map>
     </option>

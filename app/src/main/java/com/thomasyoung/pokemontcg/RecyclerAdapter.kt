@@ -29,7 +29,16 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         "Neo Destiny",
         "Legendary Collection",
         "Expedition",
-        "Aquapolis"
+        "Aquapolis",
+        "Skyridge",
+        "Ruby & Sapphire",
+        "Sandstorm",
+        "Dragon",
+        "Nintendo Promos",
+        "Magma vs Aqua",
+        "Hidden Legends",
+        "FireRed vs LeafGreen"
+
 
     )
 
@@ -49,7 +58,15 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         "Released: 05/24/2002",
         "Released: 02/19/2021",
         "Released: 09/15/2002",
-        "Released: 01/15/2003 "
+        "Released: 01/15/2003",
+        "Released: 05/12/2003",
+        "Released: 07/01/2003",
+        "Released: 09/18/2003",
+        "Released: 09/18/2003",
+        "Released: ",
+        "Released: ",
+        "Released: ",
+        "Released: ",
     )
     private var images = listOf(
         R.drawable.pokemon_base1,
@@ -66,7 +83,16 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         R.drawable.neo4,
         R.drawable.base6,
         R.drawable.ecard1,
-        R.drawable.ecard2
+        R.drawable.ecard2,
+        R.drawable.ecard3,
+        R.drawable.ex1,
+        R.drawable.ex2,
+        R.drawable.ex3,
+        R.drawable.pokemon_promo,
+        R.drawable.ex4,
+        R.drawable.ex5,
+        R.drawable.ex6
+
     )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapter.ViewHolder {
@@ -167,6 +193,46 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                     14 -> {
                         val intent = Intent(itemView.context, MainActivity::class.java)
                         intent.putExtra("cardSet", "ecard2")
+                        itemView.context.startActivity(intent)
+                    }
+                    15 -> {
+                        val intent = Intent(itemView.context, MainActivity::class.java)
+                        intent.putExtra("cardSet", "ecard3")
+                        itemView.context.startActivity(intent)
+                    }
+                    16 -> {
+                        val intent = Intent(itemView.context, MainActivity::class.java)
+                        intent.putExtra("cardSet", "ex1")
+                        itemView.context.startActivity(intent)
+                    }
+                    17 -> {
+                        val intent = Intent(itemView.context, MainActivity::class.java)
+                        intent.putExtra("cardSet", "ex2")
+                        itemView.context.startActivity(intent)
+                    }
+                    18 -> {
+                        val intent = Intent(itemView.context, MainActivity::class.java)
+                        intent.putExtra("cardSet", "ex3")
+                        itemView.context.startActivity(intent)
+                    }
+                    19 -> {
+                        val intent = Intent(itemView.context, MainActivity::class.java)
+                        intent.putExtra("cardSet", "np")
+                        itemView.context.startActivity(intent)
+                    }
+                    20 -> {
+                        val intent = Intent(itemView.context, MainActivity::class.java)
+                        intent.putExtra("cardSet", "ex4")
+                        itemView.context.startActivity(intent)
+                    }
+                    21 -> {
+                        val intent = Intent(itemView.context, MainActivity::class.java)
+                        intent.putExtra("cardSet", "ex5")
+                        itemView.context.startActivity(intent)
+                    }
+                    22 -> {
+                        val intent = Intent(itemView.context, MainActivity::class.java)
+                        intent.putExtra("cardSet", "ex6")
                         itemView.context.startActivity(intent)
                     }
 

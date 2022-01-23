@@ -30,14 +30,10 @@ class MainActivity : AppCompatActivity() {
         adapter = RecyclerAdapter()
         recyclerView.adapter = adapter
 
-        val actionBar = supportActionBar
-        actionBar!!.title = "Pokemon Booster Pack Simulator"
-
         val getCardBtn: Button = findViewById(R.id.getCardBtn)
         val viewOtherPacksButton: Button = findViewById(R.id.viewOtherPacksBtn)
         val pokemonCard: ImageView = findViewById(R.id.PokemonCard)
         val cardsLeft: TextView = findViewById(R.id.tvCardsLeft)
-        val changeSetBtn: Button = findViewById(R.id.changeSetBtn)
         var cardCount = 11
         val pokemonCardsCollected = mutableListOf<String>()
         var numCardsInSet: Int
@@ -57,6 +53,7 @@ class MainActivity : AppCompatActivity() {
                         val randomPokemonCard = (1..numCardsInSet + 1).random()
                         Glide.with(this)
                             .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
                             .into(pokemonCard)
                         //pokemonCardsCollected.add("https://images.pokemontcg.io/$set/${randomPokemonCard.toString()}_hires.png")
                         cardCount--
@@ -68,6 +65,7 @@ class MainActivity : AppCompatActivity() {
                         val randomPokemonCard = (1..numCardsInSet + 1).random()
                         Glide.with(this)
                             .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
                             .into(pokemonCard)
                         //pokemonCardsCollected.add("https://images.pokemontcg.io/base1/${randomPokemonCard.toString()}_hires.png")
                         cardCount--
@@ -79,6 +77,7 @@ class MainActivity : AppCompatActivity() {
                         val randomPokemonCard = (1..numCardsInSet + 1).random()
                         Glide.with(this)
                             .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
                             .into(pokemonCard)
                         cardCount--
                     }
@@ -89,6 +88,7 @@ class MainActivity : AppCompatActivity() {
                         val randomPokemonCard = (1..numCardsInSet + 1).random()
                         Glide.with(this)
                             .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
                             .into(pokemonCard)
                         cardCount--
                     }
@@ -99,6 +99,7 @@ class MainActivity : AppCompatActivity() {
                         val randomPokemonCard = (1..numCardsInSet + 1).random()
                         Glide.with(this)
                             .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
                             .into(pokemonCard)
                         cardCount--
                     }
@@ -109,6 +110,7 @@ class MainActivity : AppCompatActivity() {
                         val randomPokemonCard = (1..numCardsInSet + 1).random()
                         Glide.with(this)
                             .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
                             .into(pokemonCard)
                         cardCount--
                     }
@@ -119,6 +121,7 @@ class MainActivity : AppCompatActivity() {
                         val randomPokemonCard = (1..numCardsInSet + 1).random()
                         Glide.with(this)
                             .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
                             .into(pokemonCard)
                         cardCount--
                     }
@@ -129,6 +132,7 @@ class MainActivity : AppCompatActivity() {
                         val randomPokemonCard = (1..numCardsInSet + 1).random()
                         Glide.with(this)
                             .load("https://images.pokemontcg.io/neo2/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
                             .into(pokemonCard)
                         cardCount--
                         // stops working here
@@ -140,6 +144,7 @@ class MainActivity : AppCompatActivity() {
                         val randomPokemonCard = (1..numCardsInSet + 1).random()
                         Glide.with(this)
                             .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
                             .into(pokemonCard)
                         cardCount--
                     }
@@ -150,6 +155,7 @@ class MainActivity : AppCompatActivity() {
                         val randomPokemonCard = (1..numCardsInSet + 1).random()
                         Glide.with(this)
                             .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
                             .into(pokemonCard)
                         cardCount--
                     }
@@ -160,6 +166,7 @@ class MainActivity : AppCompatActivity() {
                         val randomPokemonCard = (1..numCardsInSet + 1).random()
                         Glide.with(this)
                             .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
                             .into(pokemonCard)
                         cardCount--
                     }
@@ -170,6 +177,7 @@ class MainActivity : AppCompatActivity() {
                         val randomPokemonCard = (1..numCardsInSet + 1).random()
                         Glide.with(this)
                             .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
                             .into(pokemonCard)
                         cardCount--
                     }
@@ -180,6 +188,7 @@ class MainActivity : AppCompatActivity() {
                         val randomPokemonCard = (1..numCardsInSet + 1).random()
                         Glide.with(this)
                             .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
                             .into(pokemonCard)
                         cardCount--
                     }
@@ -190,6 +199,7 @@ class MainActivity : AppCompatActivity() {
                         val randomPokemonCard = (1..numCardsInSet + 1).random()
                         Glide.with(this)
                             .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
                             .into(pokemonCard)
                         cardCount--
                     }
@@ -200,6 +210,7 @@ class MainActivity : AppCompatActivity() {
                         val randomPokemonCard = (1..numCardsInSet + 1).random()
                         Glide.with(this)
                             .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
                             .into(pokemonCard)
                         cardCount--
                     }
@@ -210,6 +221,95 @@ class MainActivity : AppCompatActivity() {
                         val randomPokemonCard = (1..numCardsInSet + 1).random()
                         Glide.with(this)
                             .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
+                            .into(pokemonCard)
+                        cardCount--
+                    }
+                }
+                "ecard3" -> {
+                    numCardsInSet = 182
+                    if (cardCount > 0) {
+                        val randomPokemonCard = (1..numCardsInSet + 1).random()
+                        Glide.with(this)
+                            .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
+                            .into(pokemonCard)
+                        cardCount--
+                    }
+                }
+                "ex1" -> {
+                    numCardsInSet = 108
+                    if (cardCount > 0) {
+                        val randomPokemonCard = (1..numCardsInSet + 1).random()
+                        Glide.with(this)
+                            .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
+                            .into(pokemonCard)
+                        cardCount--
+                    }
+                }
+                "ex2" -> {
+                    numCardsInSet = 100
+                    if (cardCount > 0) {
+                        val randomPokemonCard = (1..numCardsInSet + 1).random()
+                        Glide.with(this)
+                            .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
+                            .into(pokemonCard)
+                        cardCount--
+                    }
+                }
+                "ex3" -> {
+                    numCardsInSet = 97
+                    if (cardCount > 0) {
+                        val randomPokemonCard = (1..numCardsInSet + 1).random()
+                        Glide.with(this)
+                            .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
+                            .into(pokemonCard)
+                        cardCount--
+                    }
+                }
+                "np" -> {
+                    numCardsInSet = 40
+                    if (cardCount > 0) {
+                        val randomPokemonCard = (1..numCardsInSet + 1).random()
+                        Glide.with(this)
+                            .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
+                            .into(pokemonCard)
+                        cardCount--
+                    }
+                }
+                "ex4" -> {
+                    numCardsInSet = 95
+                    if (cardCount > 0) {
+                        val randomPokemonCard = (1..numCardsInSet + 1).random()
+                        Glide.with(this)
+                            .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
+                            .into(pokemonCard)
+                        cardCount--
+                    }
+                }
+                "ex5" -> {
+                    numCardsInSet = 101
+                    if (cardCount > 0) {
+                        val randomPokemonCard = (1..numCardsInSet + 1).random()
+                        Glide.with(this)
+                            .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
+                            .into(pokemonCard)
+                        cardCount--
+                    }
+                }
+                "ex6" -> {
+                    numCardsInSet = 112
+                    if (cardCount > 0) {
+                        val randomPokemonCard = (1..numCardsInSet + 1).random()
+                        Glide.with(this)
+                            .load("https://images.pokemontcg.io/$set/${randomPokemonCard}_hires.png")
+                            .placeholder(R.drawable.loading_spinner)
                             .into(pokemonCard)
                         cardCount--
                     }
@@ -224,15 +324,6 @@ class MainActivity : AppCompatActivity() {
             cardsLeft.text = "Cards Left: $cardCount"
             getCard("$cardSet")
         }
-
-        changeSetBtn.setOnClickListener {
-            cardCount = 11
-            tvCardsLeft.text = "Cards Left: ${(cardCount + 1)}"
-            Toast.makeText(this, "$cardSet and $cardSetChosen", Toast.LENGTH_SHORT).show()
-
-
-        }
-
 
         viewOtherPacksBtn.setOnClickListener {
             if (recyclerView.visibility != View.VISIBLE) {
